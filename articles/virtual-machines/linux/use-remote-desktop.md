@@ -152,6 +152,7 @@ The following examples create a network security group rule named `myNetworkSecu
     az network nsg rule create --resource-group myResourceGroup \
         --nsg-name myNetworkSecurityGroup --name myNetworkSecurityGroupRule \
         --protocol tcp --direction inbound --priority 1010 \
+
         --source-address-prefix '*' --source-port-range '*' \
         --destination-address-prefix '*' --destination-port-range 3389 \
         --access allow
@@ -175,6 +176,8 @@ After authenticating, the xfce desktop environment will load and look similar to
 
 ![xfce desktop environment through xrdp](./media/use-remote-desktop/xfce-desktop-environment.png)
 
+In case of N-Series GPU VM, make sure to install Nvidia drivers and verify the installation as explained here: 
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup
 
 ## Troubleshoot
 If you cannot connect to your Linux VM using a Remote Desktop client, use `netstat` on your Linux VM to verify that your VM is listening for RDP connections  as follows:
